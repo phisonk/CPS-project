@@ -2,22 +2,41 @@
 
 	<head>
 		<title>Phison's Waifu</title>
+		<link rel="stylesheet" type="text/css" href="mystyle.css"></link>
+		<script src="cie.js" type="text/javascript"></script>
+		<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
 		<style>
 			h2{
+				color:red;.
+			}
+			.textyellow{
 				color:yellow;
+			}
+			.textblue{
+				color:blue;
+			}
+			.aquaborder{
+				border:1px solid aqua;
+			}
+			#cieh1{
+				color:ff9900
 			}
 		</style>
 		<script>
-			function myAlert(){
-				alert("Hi from Function");
+			var i =0
+			function changeName(){
+				$("h1,h2").text("Bestwaifu"+i);
+				i ++;
 			}
 		</script>
 	</head>
 
-	<body>
-		<h1> Phison Khankhang </h1>
-		<h2> KMITL.1 </h2>
-		<h2> KMITL.2 </h2>
+	<body background="magumin.png">
+		<h1 id="cieh1" > Phison Khankhang </h1>
+		<h2 onclick="changeName()">click me!!</h2>
+		<hr/>
+		<h2 class="textyellow aquaborder"> KMITL.1 </h2>
+		<h2 class="textblue"> KMITL.2 </h2>
 		<h2> KMITL.3 </h2>
 		<h2 onclick="alert('hi');"> KMITL.4.1 </h2>
 		<h2 onclick="myAlert();"> KMITL.4.2 </h2>
