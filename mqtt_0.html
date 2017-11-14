@@ -65,10 +65,10 @@
 			<div class="col-md-4">
 				<div class="panel panel-info">
 				  <div class="panel-heading">
-					<h3 class="panel-title">In CIE Lab</h3>
+					<h3 class="panel-title">Distance</h3>
 				  </div>
 				  <div class="panel-body">
-					<span id="temp" class="mqtt-value">0</span>°C
+					<span id="dis_0" class="mqtt-value">0</span>°C
 				  </div>
 				</div>
 			</div>
@@ -167,6 +167,7 @@
 		  console.log("onMessageArrived:"+message.payloadString);
 		  switch(message.destinationName){
 			case "cie/g4/temp": $("#temp").html(message.payloadString); break;
+			case "cie/g4/dis": $("#dis_0").html(message.payloadString); break;
 			case "kmitl/cie/random/x1": $("#x1").html(message.payloadString); break;
 			case "kmitl/cie/random/x2": $("#x2").html(message.payloadString); break;
 		  }
