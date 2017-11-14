@@ -68,7 +68,7 @@
 					<h3 class="panel-title">Distance</h3>
 				  </div>
 				  <div class="panel-body">
-					<span id="dis_0" class="mqtt-value">0</span>°C
+					<span id="dis_0" class="mqtt-value">0</span>.cm
 				  </div>
 				</div>
 			</div>
@@ -150,6 +150,7 @@
 		  // Once a connection has been made, make a subscription and send a message.
 		  console.log("onConnect");
 		  client.subscribe("cie/g4/temp");
+		  client.subscribe("cie/g4/dis");
 		  message = new Paho.MQTT.Message("Hello");
 		  message.destinationName = "World";
 		  client.send(message);
