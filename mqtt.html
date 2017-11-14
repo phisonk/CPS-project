@@ -25,5 +25,12 @@
 				}
 			}
 		</script>
+		<script>
+			function controlFan(){
+				massage = new Paho.MQTT.Message("1");
+				message.destinationName = "kmitl/cie/g0/fan";
+				client.send(message);
+			}
+		</script>
 	</body>
 </html>

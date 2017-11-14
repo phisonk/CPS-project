@@ -76,10 +76,10 @@
 			<div class="col-md-4">
 				<div class="panel panel-info">
 				  <div class="panel-heading">
-					<h3 class="panel-title">In CIE Lab</h3>
+					<h3 class="panel-title">Light</h3>
 				  </div>
 				  <div class="panel-body">
-					<span id="temp" class="mqtt-value">0</span>°C
+					<span id="light_0" class="mqtt-value">OFF</span>
 				  </div>
 				</div>
 			</div>
@@ -151,6 +151,7 @@
 		  console.log("onConnect");
 		  client.subscribe("cie/g4/temp");
 		  client.subscribe("cie/g4/dis");
+		  client.subscribe("cie/g4/light");
 		  message = new Paho.MQTT.Message("Hello");
 		  message.destinationName = "World";
 		  client.send(message);
@@ -169,6 +170,7 @@
 		  switch(message.destinationName){
 			case "cie/g4/temp": $("#temp").html(message.payloadString); break;
 			case "cie/g4/dis": $("#dis_0").html(message.payloadString); break;
+			case "cie/g4/light": $("#light_0").html(message.payloadString); break;
 			case "kmitl/cie/random/x1": $("#x1").html(message.payloadString); break;
 			case "kmitl/cie/random/x2": $("#x2").html(message.payloadString); break;
 		  }
